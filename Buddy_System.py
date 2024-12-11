@@ -382,21 +382,22 @@ class BuddySystem:
              
     # merging the free adjasance blocks 
     def merge(self):
+      for x in range(len(self.memory_pool_list)): 
        
-       for i in range(len(self.memory_pool_list)-1,-1,-1):
+         for i in range(len(self.memory_pool_list)-1,-1,-1):
 
-         if i >= 0 and  i-1>=0: 
+            if i >= 0 and  i-1>=0: 
       
-           if self.memory_pool_list[i] == self.memory_pool_list[i-1] and self.memory_status[i] ==  self.memory_status[i-1] == "Free":
+               if self.memory_pool_list[i] == self.memory_pool_list[i-1] and self.memory_status[i] ==  self.memory_status[i-1] == "Free":
         
-              self.memory_pool_list[i] = self.memory_pool_list[i] + self.memory_pool_list[i-1]  
-              self.memory_status[i] = "Free"
+                  self.memory_pool_list[i] = self.memory_pool_list[i] + self.memory_pool_list[i-1]  
+                  self.memory_status[i] = "Free"
         
-              self.memory_pool_list.pop(i-1)
-              self.memory_status.pop(i-1)
+                  self.memory_pool_list.pop(i-1)
+                  self.memory_status.pop(i-1)
                   
-         else:
-           i -= 1
+            else:
+               i -= 1
              
              
                           
